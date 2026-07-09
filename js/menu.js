@@ -45,4 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
       filterMenu(btn.dataset.category);
     });
   });
+
+  // Listen for clicks on "Add to Cart" buttons.
+  // We attach ONE listener to the container instead of one per button,
+  // because the cards get re-rendered every time we filter — old listeners
+  // would be lost, but this way it always works no matter what's inside.
+  const menuContainer = document.getElementById("menuContainer");
+  menuContainer.addEventListener("click", (e) => {
+    if (e.target.matches("[data-id]")) {
+      const dishId = Number(e.target.dataset.id);
+      addToCart(dishId);
+      alert("Added to cart!"); // temporary — we'll replace with a nicer toast later
+    }
+  });
 });
