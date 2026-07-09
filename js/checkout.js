@@ -25,15 +25,23 @@ function handleCheckout(event) {
   const orderTotal = getCartTotal().toFixed(2);
   const customerName = document.getElementById("customerName").value;
 
-  // Save the completed order so the confirmation page can show it
+// Save the completed order so the confirmation page can show it
   const order = {
     id: orderId,
     name: customerName,
     total: orderTotal,
     items: cart,
-    date: new Date().toLocaleString()
+    date: new Date().toLocaleString(),
+    status: "Pending" // used by the admin to track order progress
   };
+
+  // Save as "the last order" for the confirmation page
   localStorage.setItem("lastOrder", JSON.stringify(order));
+
+  // ALSO save it into a running list of all orders, for the admin side
+  const allOrders = JSON.parse(localStorage.getItem("allOrders")) || [];
+  allOrders.push(order);
+  localStorage.setItem("allOrders", JSON.stringify(allOrders));
 
   // Clear the cart now that the order is placed
   cart = [];
