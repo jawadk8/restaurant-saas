@@ -56,3 +56,40 @@ function getCartTotal() {
 function getCartCount() {
   return cart.reduce((count, item) => count + item.quantity, 0);
 }
+
+// Builds the HTML for ONE row in the cart table
+function createCartRow(item) {
+  return `
+    <tr>
+      <td>${item.name}</td>
+      <td>$${item.price.toFixed(2)}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-secondary qty-btn" data-id="${item.id}" data-action="decrease">−</button>
+        <span class="mx-2">${item.quantity}</span>
+        <button class="btn btn-sm btn-outline-secondary qty-btn" data-id="${item.id}" data-action="increase">+</button>
+      </td>
+      <td>$${(item.price * item.quantity).toFixed(2)}</td>
+      <td>
+        <button class="btn btn-sm btn-danger remove-btn" data-id="${item.id}">Remove</button>
+      </td>
+    </tr>
+  `;
+}
+
+// Draws the whole cart table + total, or an empty-state message
+function renderCart() {
+  const cartBody = document.getElementById("cartBody");
+  const cartTotalEl = document.getElementById("cartTotal");
+  const emptyMessage = document.getElementById("emptyCartMessage");
+
+  if (cart.length === 0) {
+    cartBody.innerHTML = "";
+    emptyMessage.classList.remove("d-none");
+    cartTotalEl.textContent = "$0.00";
+    return;
+  }
+
+  emptyMessage.classList.add("d-none");
+  cartBody.innerHTML = cart.map(createCartRow).join("");
+  cartTotalEl.textContent = `$${getCartTotal().toFixed(2)}`;
+}
