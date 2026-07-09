@@ -93,3 +93,31 @@ function renderCart() {
   cartBody.innerHTML = cart.map(createCartRow).join("");
   cartTotalEl.textContent = `$${getCartTotal().toFixed(2)}`;
 }
+
+// Page init + click handling for cart.html
+document.addEventListener("DOMContentLoaded", () => {
+  const cartBody = document.getElementById("cartBody");
+
+  // Guard clause: if cartBody doesn't exist, we're not on cart.html,
+  // so skip the rest of this code instead of crashing.
+  if (!cartBody) return;
+
+  renderCart();
+
+  cartBody.addEventListener("click", (e) => {
+    const id = Number(e.target.dataset.id);
+
+    if (e.target.matches(".remove-btn")) {
+      removeFromCart(id);
+      renderCart();
+    }
+
+    if (e.target.matches(".qty-btn")) {
+      const item = cart.find(item => item.id === id);
+      const action = e.target.dataset.action;
+      const newQty = action === "increase" ? item.quantity + 1 : item.quantity - 1;
+      updateQuantity(id, newQty);
+      renderCart();
+    }
+  });
+});

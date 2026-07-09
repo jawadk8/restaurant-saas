@@ -90,29 +90,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/data.js"></script>
     <script src="js/cart.js"></script>
-    <script>
-      // Page-specific init + button handlers for THIS page only
-      document.addEventListener("DOMContentLoaded", () => {
-        renderCart();
-
-        document.getElementById("cartBody").addEventListener("click", (e) => {
-          const id = Number(e.target.dataset.id);
-
-          if (e.target.matches(".remove-btn")) {
-            removeFromCart(id);
-            renderCart();
-          }
-
-          if (e.target.matches(".qty-btn")) {
-            const item = cart.find((item) => item.id === id);
-            const action = e.target.dataset.action;
-            const newQty =
-              action === "increase" ? item.quantity + 1 : item.quantity - 1;
-            updateQuantity(id, newQty);
-            renderCart();
-          }
-        });
-      });
-    </script>
   </body>
 </html>
