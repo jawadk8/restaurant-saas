@@ -1,7 +1,6 @@
-// This file holds our "fake database" — a list of menu items.
-// In a real SaaS app, this would come from a server/database instead.
-
-const menuItems = [
+// This is our "seed" data — used only the FIRST time someone visits,
+// to populate localStorage. After that, localStorage is the real source of truth.
+const defaultMenuItems = [
   {
     id: 1,
     name: "Spaghetti Carbonara",
@@ -51,3 +50,16 @@ const menuItems = [
     image: "https://placehold.co/300x200/f4f1de/333?text=Panna+Cotta"
   }
 ];
+
+// Load menuItems from localStorage. If nothing's saved yet (first-ever visit),
+// fall back to defaultMenuItems AND save that as the starting point.
+let menuItems = JSON.parse(localStorage.getItem("menuItems")) || defaultMenuItems;
+
+if (!localStorage.getItem("menuItems")) {
+  localStorage.setItem("menuItems", JSON.stringify(menuItems));
+}
+
+// Call this any time menuItems is changed (add/edit/delete a dish)
+function saveMenuItems() {
+  localStorage.setItem("menuItems", JSON.stringify(menuItems));
+}
