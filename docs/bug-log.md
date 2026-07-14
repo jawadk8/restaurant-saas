@@ -43,6 +43,42 @@ every page has every element.
 
 ---
 
-## Bug #2: (placeholder — add as found)
+## Bug #2: home.js 404 error — file never actually created
+
+**Date found:** Day 3, during homepage redesign (Featured Dishes section)
+**Where:** `index.html` → `js/home.js`
+**Severity:** Medium (broke one section, rest of page still worked)
+
+### Description
+
+After adding a Featured Dishes section to the homepage that relied on a new
+`js/home.js` file, the section stayed completely empty. Browser console showed:
+
+`Failed to load resource: the server responded with a status of 404 (Not Found)`
+`Refused to execute script from 'home.js' because its MIME type ('text/html')
+is not executable`
+
+### Root Cause
+
+The `home.js` code was written and reviewed, but never actually saved as a
+real file in the `js/` folder — only the `<script src="js/home.js">` tag was
+added to `index.html`. Since the file didn't exist on disk, the local server
+returned its default 404 HTML page instead of JavaScript, which the browser
+correctly refused to execute as a script (hence the MIME type error).
+
+### Fix
+
+Confirmed the file was missing and created `js/home.js` with the intended
+code. (Later, the Featured Dishes section itself was removed in a design
+simplification, so this file was deleted again — but the debugging process
+of reading console errors to trace a 404 back to a missing file was the
+valuable part.)
+
+### Lesson learned
+
+A `<script src="...">` tag pointing to a file that doesn't exist yet fails
+silently in the sense that the page still loads — only the Console reveals
+the real error. Always check DevTools Console first when a new feature
+"does nothing" instead of assuming the JS logic itself is wrong.
 
 ---
