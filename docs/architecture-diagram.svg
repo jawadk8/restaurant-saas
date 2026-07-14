@@ -1,0 +1,164 @@
+<svg viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2F4A3C"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="#F2E8D5"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-size="28" font-weight="700" fill="#1F2420">Bella Cucina — Architecture Diagram</text>
+  <text x="700" y="76" text-anchor="middle" font-size="14" fill="#1F2420" opacity="0.7">Vanilla JS + Bootstrap + localStorage (no backend)</text>
+
+  <!-- ===== CUSTOMER LAYER ===== -->
+  <rect x="40" y="110" width="620" height="260" rx="10" fill="#FBF8F2" stroke="#2F4A3C" stroke-width="2"/>
+  <text x="60" y="140" font-size="18" font-weight="700" fill="#2F4A3C">Customer-Facing Pages</text>
+
+  <g font-size="13" fill="#1F2420">
+    <rect x="60" y="155" width="130" height="36" rx="6" fill="#F2E8D5" stroke="#2F4A3C"/>
+    <text x="125" y="178" text-anchor="middle">index.html</text>
+
+    <rect x="200" y="155" width="130" height="36" rx="6" fill="#F2E8D5" stroke="#2F4A3C"/>
+    <text x="265" y="178" text-anchor="middle">menu.html</text>
+
+    <rect x="340" y="155" width="130" height="36" rx="6" fill="#F2E8D5" stroke="#2F4A3C"/>
+    <text x="405" y="178" text-anchor="middle">cart.html</text>
+
+    <rect x="480" y="155" width="130" height="36" rx="6" fill="#F2E8D5" stroke="#2F4A3C"/>
+    <text x="545" y="178" text-anchor="middle">checkout.html</text>
+
+    <rect x="60" y="205" width="130" height="36" rx="6" fill="#F2E8D5" stroke="#2F4A3C"/>
+    <text x="125" y="228" text-anchor="middle" font-size="11">order-confirmation</text>
+
+    <rect x="200" y="205" width="130" height="36" rx="6" fill="#F2E8D5" stroke="#2F4A3C"/>
+    <text x="265" y="228" text-anchor="middle" font-size="11">reservation.html</text>
+
+    <rect x="340" y="205" width="130" height="36" rx="6" fill="#F2E8D5" stroke="#2F4A3C"/>
+    <text x="405" y="228" text-anchor="middle">contact.html</text>
+
+    <rect x="480" y="205" width="130" height="36" rx="6" fill="#F2E8D5" stroke="#2F4A3C"/>
+    <text x="545" y="228" text-anchor="middle">404.html</text>
+  </g>
+
+  <text x="60" y="270" font-size="14" font-weight="700" fill="#2F4A3C">JS Modules</text>
+  <g font-size="12" fill="#1F2420">
+    <rect x="60" y="280" width="100" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="110" y="300" text-anchor="middle">data.js</text>
+
+    <rect x="170" y="280" width="100" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="220" y="300" text-anchor="middle">cart.js</text>
+
+    <rect x="280" y="280" width="100" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="330" y="300" text-anchor="middle">menu.js</text>
+
+    <rect x="390" y="280" width="110" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="445" y="300" text-anchor="middle">checkout.js</text>
+
+    <rect x="510" y="280" width="120" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="570" y="300" text-anchor="middle" font-size="11">reservation.js</text>
+
+    <rect x="60" y="320" width="100" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="110" y="340" text-anchor="middle">contact.js</text>
+  </g>
+
+  <!-- ===== ADMIN LAYER ===== -->
+  <rect x="720" y="110" width="640" height="260" rx="10" fill="#FBF8F2" stroke="#C1442D" stroke-width="2"/>
+  <text x="740" y="140" font-size="18" font-weight="700" fill="#C1442D">Admin Pages (protected)</text>
+
+  <g font-size="13" fill="#1F2420">
+    <rect x="740" y="155" width="130" height="36" rx="6" fill="#F2E8D5" stroke="#C1442D"/>
+    <text x="805" y="178" text-anchor="middle" font-size="11">login.html</text>
+
+    <rect x="880" y="155" width="130" height="36" rx="6" fill="#F2E8D5" stroke="#C1442D"/>
+    <text x="945" y="178" text-anchor="middle" font-size="11">dashboard.html</text>
+
+    <rect x="1020" y="155" width="150" height="36" rx="6" fill="#F2E8D5" stroke="#C1442D"/>
+    <text x="1095" y="178" text-anchor="middle" font-size="11">manage-menu.html</text>
+
+    <rect x="740" y="205" width="150" height="36" rx="6" fill="#F2E8D5" stroke="#C1442D"/>
+    <text x="815" y="228" text-anchor="middle" font-size="11">manage-orders.html</text>
+
+    <rect x="900" y="205" width="180" height="36" rx="6" fill="#F2E8D5" stroke="#C1442D"/>
+    <text x="990" y="228" text-anchor="middle" font-size="11">manage-reservations.html</text>
+  </g>
+
+  <text x="740" y="270" font-size="14" font-weight="700" fill="#C1442D">JS Modules</text>
+  <g font-size="11" fill="#1F2420">
+    <rect x="740" y="280" width="120" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="800" y="300" text-anchor="middle">admin-auth.js</text>
+
+    <rect x="870" y="280" width="130" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="935" y="300" text-anchor="middle">admin-dashboard.js</text>
+
+    <rect x="1010" y="280" width="120" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="1070" y="300" text-anchor="middle">admin-menu.js</text>
+
+    <rect x="740" y="320" width="130" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="805" y="340" text-anchor="middle">admin-orders.js</text>
+
+    <rect x="880" y="320" width="160" height="30" rx="6" fill="#FFF" stroke="#C89B3C"/>
+    <text x="960" y="340" text-anchor="middle" font-size="10">admin-reservations.js</text>
+  </g>
+
+  <text x="1080" y="340" font-size="11" fill="#C1442D" font-style="italic">requireAdminLogin()</text>
+  <text x="1080" y="355" font-size="11" fill="#C1442D" font-style="italic">guards every page above</text>
+
+  <!-- Arrows down from both layers into shared data layer -->
+  <line x1="350" y1="370" x2="350" y2="450" stroke="#2F4A3C" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1040" y1="370" x2="1040" y2="450" stroke="#C1442D" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ===== SHARED DATA LAYER (localStorage) ===== -->
+  <rect x="40" y="460" width="1320" height="230" rx="10" fill="#22362B"/>
+  <text x="700" y="495" text-anchor="middle" font-size="18" font-weight="700" fill="#F2E8D5">Shared Data Layer — Browser localStorage</text>
+  <text x="700" y="515" text-anchor="middle" font-size="12" fill="#F2E8D5" opacity="0.7">Per-browser, per-device only — no real backend or database</text>
+
+  <g font-size="12" fill="#1F2420">
+    <rect x="80" y="535" width="180" height="50" rx="8" fill="#C89B3C"/>
+    <text x="170" y="556" text-anchor="middle" font-weight="700">menuItems</text>
+    <text x="170" y="573" text-anchor="middle" font-size="10">seeded from data.js</text>
+
+    <rect x="290" y="535" width="180" height="50" rx="8" fill="#C89B3C"/>
+    <text x="380" y="556" text-anchor="middle" font-weight="700">cart</text>
+    <text x="380" y="573" text-anchor="middle" font-size="10">array of {id, qty, price}</text>
+
+    <rect x="500" y="535" width="180" height="50" rx="8" fill="#C89B3C"/>
+    <text x="590" y="556" text-anchor="middle" font-weight="700">allOrders</text>
+    <text x="590" y="573" text-anchor="middle" font-size="10">full order history</text>
+
+    <rect x="710" y="535" width="180" height="50" rx="8" fill="#C89B3C"/>
+    <text x="800" y="556" text-anchor="middle" font-weight="700">lastOrder</text>
+    <text x="800" y="573" text-anchor="middle" font-size="10">for confirmation page</text>
+
+    <rect x="920" y="535" width="180" height="50" rx="8" fill="#C89B3C"/>
+    <text x="1010" y="556" text-anchor="middle" font-weight="700">reservations</text>
+    <text x="1010" y="573" text-anchor="middle" font-size="10">array of bookings</text>
+
+    <rect x="1130" y="535" width="180" height="50" rx="8" fill="#C89B3C"/>
+    <text x="1220" y="556" text-anchor="middle" font-weight="700">isAdminLoggedIn</text>
+    <text x="1220" y="573" text-anchor="middle" font-size="10">"true" / not set</text>
+  </g>
+
+  <text x="700" y="625" text-anchor="middle" font-size="12" fill="#F2E8D5">
+    Every read/write goes through JSON.parse(localStorage.getItem(key)) / localStorage.setItem(key, JSON.stringify(value))
+  </text>
+
+  <text x="700" y="660" text-anchor="middle" font-size="12" fill="#F2E8D5" opacity="0.85">
+    Key link: admin edits to menuItems (via manage-menu.html) are read directly by menu.js —
+  </text>
+  <text x="700" y="678" text-anchor="middle" font-size="12" fill="#F2E8D5" opacity="0.85">
+    changes made in Admin instantly reflect on the real customer-facing Menu page.
+  </text>
+
+  <!-- Legend -->
+  <rect x="40" y="720" width="1320" height="80" rx="10" fill="#FBF8F2" stroke="#1F2420" stroke-width="1"/>
+  <text x="60" y="748" font-size="13" font-weight="700" fill="#1F2420">Legend</text>
+  <rect x="60" y="758" width="16" height="16" fill="#2F4A3C"/>
+  <text x="84" y="771" font-size="12" fill="#1F2420">Customer-facing flow</text>
+  <rect x="280" y="758" width="16" height="16" fill="#C1442D"/>
+  <text x="304" y="771" font-size="12" fill="#1F2420">Admin flow (login-guarded)</text>
+  <rect x="540" y="758" width="16" height="16" fill="#C89B3C"/>
+  <text x="564" y="771" font-size="12" fill="#1F2420">localStorage data key</text>
+  <text x="800" y="771" font-size="12" fill="#1F2420" font-style="italic">No server/database — all state lives in the browser</text>
+</svg>
