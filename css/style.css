@@ -1,0 +1,193 @@
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --color-basil: #2F4A3C;
+  --color-basil-dark: #22362B;
+  --color-tomato: #C1442D;
+  --color-tomato-dark: #A3371F;
+  --color-semolina: #F2E8D5;
+  --color-gold: #C89B3C;
+  --color-ink: #1F2420;
+  --color-cream-card: #FBF8F2;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+/* ===== STICKY FOOTER LAYOUT =====
+   Makes the footer sit at the bottom of the viewport on short pages,
+   instead of floating right under the content. */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background-color: var(--color-semolina);
+  color: var(--color-ink);
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, .navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* Respect users who've asked for less motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Visible keyboard focus everywhere (accessibility requirement) */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar.bg-dark {
+  background-color: var(--color-basil) !important;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+}
+
+.nav-link.active {
+  color: var(--color-gold) !important;
+  font-weight: 600;
+}
+
+/* ===== HERO ===== */
+header.bg-secondary {
+  background-color: var(--color-basil-dark) !important;
+  background-image:
+    linear-gradient(135deg, var(--color-basil-dark), var(--color-basil)),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 12px);
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+header h1 {
+  font-size: 3.2rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+/* Small decorative underline beneath the hero headline */
+header h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-gold);
+}
+
+header .lead {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* ===== BUTTONS ===== */
+.btn-warning {
+  background-color: var(--color-tomato) !important;
+  border-color: var(--color-tomato) !important;
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(193, 68, 45, 0.35);
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-warning:hover {
+  background-color: var(--color-tomato-dark) !important;
+  border-color: var(--color-tomato-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(193, 68, 45, 0.45);
+}
+
+/* ===== CARDS (menu dishes) ===== */
+.card {
+  background-color: var(--color-cream-card);
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(31, 36, 32, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(31, 36, 32, 0.15);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* Signature element: dotted leader line between dish name and price,
+   like a printed restaurant menu. Applied via .menu-price-line in menu.js */
+.menu-price-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+}
+
+.menu-price-line .dish-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.menu-price-line .dots {
+  flex: 1;
+  border-bottom: 2px dotted var(--color-basil);
+  opacity: 0.4;
+  margin-bottom: 4px;
+}
+
+.menu-price-line .dish-price {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--color-tomato);
+  white-space: nowrap;
+}
+
+/* ===== FOOTER ===== */
+footer.bg-dark {
+  background-color: var(--color-ink) !important;
+}
+
+/* ===== FORMS ===== */
+.form-control:focus, .form-select:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 0.25rem rgba(200, 155, 60, 0.25);
+}
+
+/* ===== TABLES (admin pages) ===== */
+.table thead {
+  background-color: var(--color-basil);
+  color: #fff;
+}
+
+/* ===== BADGES ===== */
+.badge.bg-success { background-color: var(--color-basil) !important; }
+.badge.bg-danger { background-color: var(--color-tomato) !important; }
+.badge.bg-warning { background-color: var(--color-gold) !important; }

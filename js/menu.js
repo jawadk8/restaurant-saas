@@ -6,9 +6,12 @@ function createDishCard(item) {
       <div class="card h-100">
         <img src="${item.image}" class="card-img-top" alt="${item.name}">
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title">${item.name}</h5>
+          <div class="menu-price-line">
+            <span class="dish-name">${item.name}</span>
+            <span class="dots"></span>
+            <span class="dish-price">$${item.price.toFixed(2)}</span>
+          </div>
           <p class="card-text">${item.description}</p>
-          <p class="fw-bold">$${item.price.toFixed(2)}</p>
           <button class="btn btn-warning mt-auto" data-id="${item.id}">
             Add to Cart
           </button>
