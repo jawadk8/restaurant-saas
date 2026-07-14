@@ -7,6 +7,39 @@ function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+// Shows a small stacked notification in the bottom-right corner, like
+// "Spaghetti Carbonara added to cart" — auto-dismisses after a few seconds.
+function showToast(message) {
+  // Create the container once, and reuse it for every toast after that
+  let toastContainer = document.getElementById("toastContainer");
+  if (!toastContainer) {
+    toastContainer = document.createElement("div");
+    toastContainer.id = "toastContainer";
+    toastContainer.className = "toast-container position-fixed bottom-0 end-0 p-3";
+    toastContainer.style.zIndex = "1080";
+    document.body.appendChild(toastContainer);
+  }
+
+  const toastEl = document.createElement("div");
+  toastEl.className = "toast align-items-center text-bg-dark border-0";
+  toastEl.setAttribute("role", "alert");
+  toastEl.innerHTML = `
+    <div class="d-flex">
+      <div class="toast-body">${message}</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  `;
+
+  toastContainer.appendChild(toastEl);
+
+  const toast = new bootstrap.Toast(toastEl, { delay: 2500 });
+  toast.show();
+
+  // Clean up the element from the DOM once it's done hiding, so they
+  // don't pile up invisibly forever
+  toastEl.addEventListener("hidden.bs.toast", () => toastEl.remove());
+}
+
 // Adds a dish to the cart. If it's already in there, just bump the quantity.
 function addToCart(id) {
   const dish = menuItems.find(item => item.id === id);
@@ -26,6 +59,7 @@ function addToCart(id) {
   }
 
   saveCart();
+  showToast(`${dish.name} added to cart`);
 }
 
 // Removes a dish from the cart completely
