@@ -100,3 +100,33 @@ represent independent judgment calls (scope decisions, bug discovery,
 questioning the need for a proposed change) rather than passive acceptance
 of AI-generated suggestions — these are the moments most relevant to
 demonstrating genuine understanding of the codebase.
+
+## Final Documentation Pass
+
+- Directed Claude to build the architecture diagram as an actual SVG file
+  showing the customer/admin page split, their JS modules, and the shared
+  localStorage data layer they both read/write to — reviewed the layout
+  before accepting it as accurate to the real codebase.
+- Requested a full README covering setup instructions, admin credentials,
+  and — deliberately — a "Known Limitations" section rather than a README
+  that only lists features. Caught and fixed a markdown formatting bug
+  (escaped brackets breaking the Live Demo link) before finalizing.
+- Asked for a refactoring report grounded in real changes made during the
+  project (the app.js/ui.js cleanup, the cart.js consolidation, the data.js
+  localStorage conversion, the menu-price-line pattern) rather than
+  hypothetical or generic refactoring examples, including an honest section
+  on refactors that were consciously left undone and why.
+- Decided the required "Peer Review Report" deliverable could not be
+  meaningfully generated without first reviewing actual cohort peer
+  projects, and chose to defer it rather than have Claude produce
+  placeholder feedback on work it had never seen.
+
+## Final Notes
+
+Across all three days, the recurring pattern was: propose a plan, review it
+before accepting, test every change in-browser, and treat AI output as a
+draft to verify rather than a final answer — including catching real bugs,
+questioning proposed accessibility work until its purpose was clear, and
+declining to fabricate a peer review report for projects never actually
+reviewed. This log, together with bug-log.md, is intended to demonstrate
+that understanding, not just usage, was the goal throughout.
