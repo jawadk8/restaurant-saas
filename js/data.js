@@ -7,7 +7,7 @@ const defaultMenuItems = [
     category: "Pasta",
     price: 12.99,
     description: "Classic Roman pasta with egg, pancetta, and pecorino cheese.",
-    image: "https://placehold.co/300x200/e8c39e/333?text=Carbonara"
+    image: "assets/images/spaghetti-carbonara.jpg"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const defaultMenuItems = [
     category: "Pasta",
     price: 11.49,
     description: "Creamy parmesan sauce tossed with fresh fettuccine.",
-    image: "https://placehold.co/300x200/f0e0c0/333?text=Alfredo"
+    image: "assets/images/fettuccine-alfredo.webp"
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const defaultMenuItems = [
     category: "Pizza",
     price: 13.99,
     description: "San Marzano tomatoes, fresh mozzarella, and basil.",
-    image: "https://placehold.co/300x200/e07a5f/fff?text=Margherita"
+    image: "assets/images/margheritta-pizza.webp"
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const defaultMenuItems = [
     category: "Pizza",
     price: 14.99,
     description: "Loaded with pepperoni and mozzarella on a crispy crust.",
-    image: "https://placehold.co/300x200/c1440e/fff?text=Pepperoni"
+    image: "assets/images/pepperoni-pizza.webp"
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ const defaultMenuItems = [
     category: "Desserts",
     price: 7.49,
     description: "Espresso-soaked ladyfingers layered with mascarpone cream.",
-    image: "https://placehold.co/300x200/8d6b48/fff?text=Tiramisu"
+    image: "assets/images/tiramisu.jpg"
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ const defaultMenuItems = [
     category: "Desserts",
     price: 6.99,
     description: "Silky vanilla cream topped with a berry compote.",
-    image: "https://placehold.co/300x200/f4f1de/333?text=Panna+Cotta"
+    image: "assets/images/panna-cotta.jpg"
   }
 ];
 

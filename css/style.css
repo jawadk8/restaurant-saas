@@ -135,6 +135,14 @@ header .lead {
   box-shadow: 0 8px 20px rgba(31, 36, 32, 0.15);
 }
 
+/* Forces every dish photo to the same size and crop, regardless of the
+   original photo's dimensions — keeps the menu grid looking consistent. */
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
 .card-title {
   font-family: var(--font-display);
   font-weight: 600;
