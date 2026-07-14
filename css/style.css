@@ -70,6 +70,11 @@ select:focus-visible, textarea:focus-visible {
   font-weight: 600;
 }
 
+/* Brighter nav link color for sufficient contrast against the green navbar */
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
 /* ===== HERO ===== */
 header.bg-secondary {
   background-color: var(--color-basil-dark) !important;
